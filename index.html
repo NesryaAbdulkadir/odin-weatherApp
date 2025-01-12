@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <form id="search">
+      <input type="text" required />
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="container">
+      <div class="card">
+        <div class="location">
+          <h2 id="location"></h2>
+        </div>
+        <div class="datas">
+          <div class="temperature data">
+            <h3 id="temperature"></h3>
+            <p>Temperature</p>
+          </div>
+          <div class="humidity data">
+            <h3 id="humidity"></h3>
+            <p>Humidity</p>
+          </div>
+          <div class="wind data">
+            <h3 id="wind"></h3>
+            <p>Wind</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
