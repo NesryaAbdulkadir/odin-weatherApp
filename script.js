@@ -1,6 +1,7 @@
 async function getData(location) {
   apiKey = "V6J6JYJ68MCJSWZQWPSAAVQCA";
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/?location=${location}&key=${apiKey}`;
+
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -11,14 +12,17 @@ async function getData(location) {
     }
     const data = await response.json();
 
-    return data;
+    return { loading: false, data };
   } catch (error) {
     console.log(error);
+    return { loading: false, data: null };
   }
 }
 
 async function displayData(location) {
-  const data = await getData(location);
+  document.getElementById("location").innerText = "Loading...";
+  const { data } = await getData(location);
+  document.getElementById("location").innerText = "";
   if (data) {
     const temperature = data.days[0].temp;
     const humidity = data.days[0].hours[0].humidity;
